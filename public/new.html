@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="new.css" />
+</head>
+<body>
+    <div class="header">
+        <h1>LIQUID</h1> 
+    </div>
+    <form id="activity-form">
+        <h1>ADD ACTIVITY:</h1>
+        <h2>ENTER AMOUNT SAVED:</h2>
+        <i>$</i>
+        <input type="text" id="amount-saved">
+        <br><br>
+        <label for="categories">CATEGORY</label>
+        <select name="categories" id="categories">
+            <option value="clothing">Clothing</option>
+            <option value="entertainment">Entertainment</option>
+            <option value="gas">Gas</option>
+            <option value="groceries">Groceries</option>
+            <option value="household">Household Items</option>
+            <option value="misc">Miscellaneous</option>
+        </select>
+
+        <h2>ENTER AMOUNT SPENT:</h2>
+        <i>$</i>
+        <input type="text" id="amount-spent"> 
+        <br> <br>
+        <input id="submit-activity" type="submit"/>
+    </form>
+    <br> <br> <br>
+    <a href="./final.html">
+        NEXT 
+    </a>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="./new.js"></script>
+</body>
+</html>
