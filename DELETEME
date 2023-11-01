@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,13 +10,13 @@
     <div class="header">
         <h1>LIQUID</h1> 
     </div>
-    <br> <br> <br> <br>
+
     <main id="display-savings">
        
-        <!-- <input type="button" value="GET PROGRESS" id="progress-button"/> -->
+        <input type="button" value="GET PROGRESS" id="progress-button"/>
         <div id="progress-results"></div>
     </main>
-    <br> <br>
+
     <a href="./index.html">
         ADD INCOME 
     </a>
@@ -30,4 +30,4 @@
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="./final.js"></script>
 </body>
-</html>
+</html> -->

@@ -1,6 +1,6 @@
 console.log('FINAL.JS WORKING')
-const area = document.getElementById('progress-button')
-
+// const area = document.getElementById('progress-button')
+const resultsDiv = document.getElementById("progress-results")
 
 const savingsDisplayed = (event) => {
     // console.log(res.data) to test
@@ -11,11 +11,13 @@ const savingsDisplayed = (event) => {
     .then((response) => {
         console.log(response.data)
         const displayedSavings = 
-        `<div>
-            <h1>${response.data}</h1>
-        </div>`
+        `
+            <h1>${response.data.savings}</h1>
+        `
+        resultsDiv.innerHTML = displayedSavings
     })
 
 }
 
-area.addEventListener('click', savingsDisplayed)
+// area.addEventListener('click', savingsDisplayed)
+savingsDisplayed()
