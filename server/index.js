@@ -13,7 +13,7 @@ app.post("/api/savedandspent", addActivity);
 
 app.get("/api/totalsavings", getTotal);
 
-// app.get("/api/spending", getSpending);
+app.get("/api/spending", getSpending);
 
 
 app.listen(4000, () => console.log("Server running on 4000"));

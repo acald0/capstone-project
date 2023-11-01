@@ -1,13 +1,14 @@
 let savings = 0
-let spending = {}
+let spending = {'clothing':0, 'entertainment': 0, 'gas': 0, 'groceries': 0, 'household': 0, 'miscellaneous': 0}
 
 module.exports = {
     addGoal: (req, res) => {
-        let {dateVariable, yearlyIncome, percentToSave} = req.body
-        let yearToDate = (+yearlyIncome / 52)
+        let {dateVariable, yearlyIncome, percentToSave, weeksSaved} = req.body
+        let yearToDate = (+yearlyIncome / 52) * +weeksSaved
         console.log(dateVariable)
         savings += yearToDate
         // console.log(req.body)
+        console.log(weeksSaved)
         res.status(200).send({savings})
     },
 
@@ -28,41 +29,17 @@ module.exports = {
         amountSpent = +amountSpent
         // spending = spending.push(categorySpending[amountSpent])
         if(categorySpending === "clothing"){
-            if(spending.clothing){
-                spending.clothing += amountSpent
-            } else{
-                spending.clothing = amountSpent
-            }
+            spending.clothing += amountSpent
         } else if(categorySpending === "entertainment"){
-            if(spending.entertainment){
-                spending.entertainment += amountSpent
-            } else{
-                spending.entertainment = amountSpent
-            }
+            spending.entertainment += amountSpent
         } else if(categorySpending === "gas"){
-            if(spending.gas){
-                spending.gas += amountSpent
-            } else{
-                spending.gas = amountSpent
-            }
+            spending.gas += amountSpent
         } else if(categorySpending === "groceries"){
-            if(spending.groceries){
-                spending.groceries += amountSpent
-            } else{
-                spending.groceries = amountSpent
-            }
-        } else if(categorySpending === "household items"){
-            if(spending.household){
-                spending.household += amountSpent
-            } else{
-                spending.household = amountSpent
-            }
+            spending.groceries += amountSpent
+        } else if(categorySpending === "household"){
+            spending.household += amountSpent
         } else if(categorySpending === "miscellaneous"){
-            if(spending.misc){
-                spending.misc += amountSpent
-            } else{
-                spending.misc = amountSpent
-            }
+            spending.misc += amountSpent
         }
         console.log(spending)
         res.status(200).send({savings})
@@ -82,25 +59,11 @@ module.exports = {
         console.log('----spending----')
         console.log(spending)
         console.log('----------------')
+    },
+    
+    getSpending: (req, res) => {
+        res.status(200).send(spending)
+        console.log("getSpending's working")
     }
-
-    // getActivity: (req, res) => {
-    //     const {saved, spent} = req.body
-
-    //     activity = {
-    //         saved,
-    //         spent
-    //     }
-    // },
-
-    // getTotal: (req, res) => {
-    //     let total = yearToDate
-    //     total = total + addedSaved
-    // },
-
-    // getSpending: (req, res) => {
-    //     let spending = 0
-    //     spending = spending + addedSpending
-    // }
 
 }

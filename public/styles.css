@@ -1,8 +1,8 @@
 * {
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color: green;
-    font-size: large;
-    background-color: rgb(255, 253, 251);
+    font-family: 'Bebas Neue', sans-serif;    
+    color: rgb(79, 184, 79);
+    font-size: 40px;
+    background-color: rgb(255, 255, 255);
 }
 
 body {
@@ -10,18 +10,26 @@ body {
     width: 100vw;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     text-align: center;
+    flex-direction: column;
 }
 
 a {
-    position: absolute;
-    bottom: 30vh;
+    margin: 5px;
+    bottom: 20px;
 }
 
-div {
+/* div {
     position: absolute;
     top: 10vh;
     font-size: 600px;
-}
+} */
 
+img {
+    height: 150px;
+    width: 200px;
+    position: absolute;
+    top: 1px;
+    left: 1px;
+}
