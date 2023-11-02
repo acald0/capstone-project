@@ -28,15 +28,16 @@ const spendingsDisplayed = (event) => {
     axios.get('http://localhost:4000/api/spending')
     .then((response) => {
         console.log(response.data)
+        let total = response.data.clothing + response.data.entertainment + response.data.gas + response.data.groceries + response.data.household + response.data.miscellaneous
         const displayedSpendings = 
         `
-            <h2>TOTAL SPENDINGS:</h2>
-            <h3>CLOTHING: $${response.data.clothing}</h3>
-            <h3>ENTERTAINMENT: $${response.data.entertainment}</h3>
-            <h3>GAS: $${response.data.gas}</h3>
-            <h3>GROCERIES: $${response.data.groceries}</h3>
-            <h3>HOUSEHOLD ITEMS: $${response.data.household}</h3>
-            <h3>MISC: $${response.data.miscellaneous}</h3>
+            <h2>TOTAL SPENDING:</h2> $${total}
+            <h3>CLOTHING -  $${response.data.clothing}</h3>
+            <h3>ENTERTAINMENT -  $${response.data.entertainment}</h3>
+            <h3>GAS -  $${response.data.gas}</h3>
+            <h3>GROCERIES -  $${response.data.groceries}</h3>
+            <h3>HOUSEHOLD ITEMS -  $${response.data.household}</h3>
+            <h3>MISC -  $${response.data.miscellaneous}</h3>
         `
         spendingDiv.innerHTML = displayedSpendings
     })

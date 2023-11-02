@@ -4,7 +4,8 @@ let spending = {'clothing':0, 'entertainment': 0, 'gas': 0, 'groceries': 0, 'hou
 module.exports = {
     addGoal: (req, res) => {
         let {dateVariable, yearlyIncome, percentToSave, weeksSaved} = req.body
-        let yearToDate = (+yearlyIncome / 52) * +weeksSaved
+        let yearToDate = ((+yearlyIncome / 52)/percentToSave) * +weeksSaved
+        yearToDate = Math.trunc(yearToDate)
         console.log(dateVariable)
         savings += yearToDate
         // console.log(req.body)
